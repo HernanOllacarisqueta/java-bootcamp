@@ -7,23 +7,29 @@ public class UserServiceProxy implements UserService{
 	protected UserServiceProxy(UserService imp){
 		this.implementation = imp;	
 	}
-	
+
 	@Override
-	public void createUser() {
-		implementation.createUser();
-		
+	public String createUser(String name) {
+		implementation.createUser(name);
+		return name;
 	}
 
 	@Override
-	public void returnUserID() {
-		implementation.returnUserID();
-		
+	public String findUser(String foundName) {
+		implementation.createUser(foundName);
+		return foundName;
 	}
 
 	@Override
-	public void returnEmail() {
-		implementation.returnEmail();
-		
+	public Boolean deleteUser(Boolean deletedUser) {
+		implementation.deleteUser(deletedUser);
+		return deletedUser;
+	}
+
+	@Override
+	public Boolean updateUser(Boolean updatedUser) {
+		implementation.updateUser(updatedUser);
+		return updatedUser;
 	}
 	
 }

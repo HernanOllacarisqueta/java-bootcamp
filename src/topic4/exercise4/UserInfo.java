@@ -2,27 +2,39 @@ package topic4.exercise4;
 
 public class UserInfo {
 
-	private String user;
-	private int userID;
-	private String userEmail;
+	private String name;
+	private int id;
+	private String email;	
 	
-	public String getUser() {
-		return user;
+	public String getName() {
+		return name;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public int getUserID() {
-		return userID;
+	public int getId() {
+		return id;
 	}
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
+	public int hashcode(){
+		return id;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		boolean match = false;
+		UserInfo userinfo = (UserInfo)obj;
+		if(userinfo.id == id)
+		match = true;
+		return match;
+	}
 }

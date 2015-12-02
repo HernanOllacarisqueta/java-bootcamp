@@ -5,21 +5,27 @@ public class UserServiceWebServerClient implements UserService {
 	UserService webService;
 	
 	@Override
-	public void createUser() {
-		webService.createUser();
-		
+	public String createUser(String name) {
+		webService.createUser(name);
+		return name;
 	}
 
 	@Override
-	public void returnUserID() {
-		webService.returnUserID();
-		
+	public String findUser(String foundName) {
+		webService.createUser(foundName);
+		return foundName;
 	}
 
 	@Override
-	public void returnEmail() {
-		webService.returnEmail();
-		
+	public Boolean deleteUser(Boolean deletedUser) {
+		webService.deleteUser(deletedUser);
+		return deletedUser;
+	}
+
+	@Override
+	public Boolean updateUser(Boolean updatedUser) {
+		webService.updateUser(updatedUser);
+		return updatedUser;
 	}
 
 }

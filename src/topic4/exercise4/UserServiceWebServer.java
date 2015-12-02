@@ -5,21 +5,27 @@ public class UserServiceWebServer implements UserService {
 	UserService imp;
 	
 	@Override
-	public void createUser() {
-		imp.createUser();
-		
+	public String createUser(String name) {
+		imp.createUser(name);
+		return name;
 	}
 
 	@Override
-	public void returnUserID() {
-		imp.returnUserID();
-		
+	public String findUser(String foundName) {
+		imp.createUser(foundName);
+		return foundName;
 	}
 
 	@Override
-	public void returnEmail() {
-		imp.returnEmail();
-		
+	public Boolean deleteUser(Boolean deletedUser) {
+		imp.deleteUser(deletedUser);
+		return deletedUser;
+	}
+
+	@Override
+	public Boolean updateUser(Boolean updatedUser) {
+		imp.updateUser(updatedUser);
+		return updatedUser;
 	}
 
 }
